@@ -1,0 +1,370 @@
+---
+title: "Lista de Exercícios 01 - Análise de Dados com R"
+author: "Manoel Antonio de Lima Neto"
+date: '`r Sys.Date()`'
+output: html_document
+---
+
+## Exercícios
+
+1.  Execute as seguintes expressões e mostre os resultados obtidos.
+
+```{r}
+1 + 1        #primeira expressão
+100:130      #segunda expressão
+5 - +1       #terceira expressão
+3 %% 5       #quarta expressão
+2 * 3        #quinta expressão
+4 - 1        #sexta expressão
+6 / (4 - 1)  #sétima expressão
+```
+
+------------------------------------------------------------------------
+
+2.  Utilize uma expressão para cada item.
+
+```{=html}
+<!-- -->
+```
+a.  Escolha um número e some 3 a ele.
+
+```{r}
+(soma_3 <- 2 + 3)
+```
+
+b.  Multiplique o resultado por 2.
+
+```{r}
+(mult_2 <- soma_3 * 2)
+```
+
+c.  Subtraia 10 da resposta.
+
+```{r}
+(menos_10 <- mult_2 - 10)
+```
+
+d.  Divida o que foi obtido por 4.
+
+```{r}
+(div_4 <- menos_10 / 4)
+```
+
+------------------------------------------------------------------------
+
+3.  Calcule $\sqrt{16}$, ${16^{0.5}}^{3}$, ${(16^{0.5})}^{3}$ e $4^{\frac{3}{2}}$.
+
+$\sqrt{16}$
+
+```{r}
+sqrt(16)
+```
+
+${16^{0.5}}^{3}$
+
+```{r}
+16**(0.5**3)
+```
+
+${(16^{0.5})}^{3}$
+
+```{r}
+(16**0.5)**3
+```
+
+$4^{\frac{3}{2}}$
+
+```{r}
+4**(3/2)
+```
+
+------------------------------------------------------------------------
+
+4.  Teste as expressões `log10(1000)`, `log(1000)`, `exp(log(1000))`. Depois teste a expressão `log2(64)`. Verifique se você entendeu as diferentes funções logarítmicas.
+
+```{r}
+log10(1000)       #log de 1000 na base 10
+log(1000)         #log de 1000 na base e
+exp(log(1000))    #e elevado na log de 1000 na base e
+log2(64)          #log de 64 na base 2
+```
+
+------------------------------------------------------------------------
+
+5.  Defina as variáveis abaixo tomando cuidados ao nomear as variáveis, conforme visto em sala de aula. Mostre os valores para as seguintes constantes:
+
+```{=html}
+<!-- -->
+```
+a.  Velocidade da luz: $\nu = 2.998 \times 10^{8} \left[m \, s^{-1}\right]$
+
+```{r}
+v_luz <- 2.998e8
+v_luz
+```
+
+b.  Carga elementar ou eletrônica: $e = 1.602 \times 10^{-19} \left[C\right]$
+
+```{r}
+carga_ele <- 1.602e-19
+carga_ele
+```
+
+c.  Permissividade do vácuo: $\epsilon_{0} = 8.85 \times 10^{-12} \left[C^{2} \, N^{-1} \, m^{2}\right]$
+
+```{r}
+epsilon_zero <- 8.85e-12
+epsilon_zero
+```
+
+d.  Constante de Planck: $h=6.626 \times 10^{-34} \left[J \, s\right]$
+
+```{r}
+planck_const <- 6.626e-34
+planck_const
+```
+
+e.  Constante de Stefan Boltzman: $\sigma = 5.67 \times 10^{-8} \left[W \, m^{-2} \, K^{-4}\right]$
+
+```{r}
+stefboltz_const <- 5.67e-8
+stefboltz_const
+```
+
+f.  Constante solar: $S_{0} = 1380 \left[W \, m^{-2}\right]$
+
+```{r}
+sun_const <- 1380
+sun_const
+```
+
+g.  Constante de Avogadro: $N_{A} = 6.022 \times 10^{23} \left[mol^{-1}\right]$
+
+```{r}
+avogadro_const <- 6.022e23
+avogadro_const
+```
+
+h.  Constante dos gases para o ar seco: $R_{d} = 287.04 \left[J \, K^{-1} \, kg^{-1}\right]$
+
+```{r}
+dry_air_const <- 287.04
+dry_air_const
+```
+
+i.  Constante dos gases ideais para o vapor: $R_{w} = 461.5 \left[J \, K^{-1} \, kg^{-1}\right]$
+
+```{r}
+vapor_const <- 461.5
+vapor_const
+```
+
+j.  Densidade do ar seco para CNTP (à 0 ° C em 1000 mb): $\rho=1.2754 \left[kg \, m^{-3}\right]$
+
+```{r}
+dry_air_density <- 1.2754
+dry_air_density
+```
+
+k.  Pressão média ao nível médio do mar para atmosfera padrão: $P_{0}=1013.25 \left[mb\right]$
+
+```{r}
+pressure_msl <- 1013.25
+pressure_msl
+```
+
+l.  Temperatura ao nível médio do mar para atmosfera padrão: $T_{0}=288.15 \left[K\right]$
+
+```{r}
+temp_msl <-288.15
+temp_msl
+```
+
+m.  Calor latente de vaporização ou condensação (à 0 °C): $\lambda_{v} = 2.501 \times 10^{6}\left[J \, kg^{-1}\right]$
+
+```{r}
+vapor_latent <- 2.501e6
+vapor_latent
+```
+
+n.  Calor latente de fusão (à 0 °C): $\lambda_{f} = 0.334 \times 10^{6}\left[J \, kg^{-1}\right]$
+
+```{r}
+melting_latent <- 0.334e6
+melting_latent
+```
+
+o.  Massa molecular da água: $M_w = 18.016 \left[g \, mol^{-1}\right]$
+
+```{r}
+water_mol_mass <- 18.016
+water_mol_mass
+```
+
+p.  Peso molecular do ar: $M_{ar} = 28.96 \left[g \, mol^{-1}\right]$
+
+```{r}
+air_mol_mass <-28.96
+air_mol_mass
+```
+
+q.  Raio da terra: $r = 6.37 \times 10^{6} \left[m\right]$
+
+```{r}
+earth_radius <- 6.37e6
+earth_radius
+```
+
+r.  Velocidade angular da Terra: $\Omega=7.29 \times 10^{-5} \left[rad \, s^{-1}\right]$
+
+```{r}
+earth_ang_velocity <- 7.29e-5
+earth_ang_velocity
+```
+
+------------------------------------------------------------------------
+
+6.  
+
+    a.  Como você pode fazer para que a constante `pi` seja mostrada com 20 dígitos? (b) Como voltar a trabalhar a com 7 dígitos novamente? c. Mostre o número neperiano com 7 dígitos.
+
+```{=html}
+<!-- -->
+```
+a.  
+
+```{r}
+options(digits = 20)
+pi
+```
+
+(b) 
+
+```{r}
+options(digits = 7)
+pi
+```
+
+c.  
+
+```{r}
+options(digits = 7)
+exp(1)
+```
+
+------------------------------------------------------------------------
+
+7.  Determine a temperatura de bulbo úmido ($T_{w}$) usando a expressão empírica ([Stull, 2011](http://journals.ametsoc.org/doi/abs/10.1175/JAMC-D-11-0143.1%5D)) abaixo. Salve os resultados em variáveis diferentes. Determine a $T_{w}$ para temperatura do ar $T = 20°C$ e Umidade relativa \$UR = 70 % \$ ? Defina variáveis para os valores de $T$ e $UR$ solicitados e substitua-os na equação de $T_{w}$. Não é necessária a conversão dos dados expressos em % para aplicação na equação.
+
+$$
+\begin{aligned} 
+T_{w}=T\cdot atan\left [ 0.151977\cdot \left ( UR+8.313659 \right )^{1/2} \right ]+ \\
+atan\left (T+UR \right )-\\
+atan\left ( UR-1.676331 \right )+\\
+0.00391838\left ( UR \right )^{3/2}\cdot atan\left ( 0.023101\cdot UR \right )-\\
+4.686035
+\end{aligned} 
+$$
+
+```{r}
+temp = 20
+rh = 70
+
+wet_bulb_temperature = temp * atan(0.151977 * (rh + 8.313659)**(1/2) ) + atan(temp + rh) -
+  atan(rh - 1.676331) + 0.00391838 * (rh**(3/2) ) * atan(0.023101 * rh) - 4.686035
+
+wet_bulb_temperature
+
+```
+
+------------------------------------------------------------------------
+
+8.  Determine os valores de umidade do solo:
+
+no potencial hídrico de 10kPa ($\theta_{10kPa}$); na capacidade de campo ($\theta_{33kPa}$); no ponto de murcha permanente ($\theta_{1500kPa}$)
+
+utilizando o conjunto de equações de pedotransferência abaixo ([Tomasela et al. 2003](https://dl.sciencesocieties.org/publications/sssaj/abstracts/67/4/1085)):
+
+```{r , echo = FALSE, out.width="88%", include = TRUE, fig.align='center'}
+knitr::include_graphics('conj-eqs-tomasella2003.png')
+```
+
+Considere $SI = 16.29$ (%), $CL = 49.25$ (%), $Db = 1.25$ ($g \, cm^{-3}$), $Me = 25$ (%), onde $SI$ é a porcentagem de silte no solo, $CL$ é a porcentagem de argila, $Db$ é a densidade do solo e $Me$ é a umidade equivalente em %. Não é necessária a conversão dos dados expressos em % para aplicação nas equações.
+
+```{r}
+si = 16.29
+cl = 49.25
+db = 1.25
+me = 25
+
+x14 = -1.05501 + 0.0650857*(si)
+x15 = -2.07588 + 0.0423954*(cl)
+x16 = -6.03402 + 4.80572*(db)
+x17 = -2.18409 + 8.84963*(me)/100
+z9 = 0.175202 + 1.18513*(x17) - 0.0996042*(x17)**2 + 0.327915*(x16) - 0.0758657*(x16)**2
+z10 = 0.929344*(z9) + 0.132519*(x14)
+
+theta_10kpa = 0.339255 + 0.112526*(z10)
+z11 = 0.191452 + 1.25652*(x17) - 0.079098*(x17)**2 + 0.393814*(x16) + 0.152095*(x17)*(x16)
+
+theta_33kpa = 0.28951 + 0.103815*(z11)
+z13 = 0.235084 + 0.33033*(x15) - 0.191838*(x15)**2 + 0.0543679*(x15)**3 + 0.977685*(x17) +
+  0.304174*(x15)*(x17) - 0.218857*(x17)**2 - 0.164373*(x15)*(x17)**2 + 0.0415057*(x17)**3 +
+  0.373361*(x16) + 0.0811861*(x17)*(x16) - 0.0768087*(x15)*(x17)*(x16)
+
+theta_1500kpa = 0.214008 + 0.0862945*(z13)
+
+```
+
+```{r}
+theta_10kpa
+theta_33kpa
+theta_1500kpa
+```
+
+------------------------------------------------------------------------
+
+9.  Arredonde para 2 casas decimais os resultados da questão 8. Dica ver `?round`.
+
+```{r}
+round(x = theta_10kpa, digits = 2)
+round(x = theta_33kpa, digits = 2)
+round(x = theta_1500kpa, digits = 2)
+```
+
+------------------------------------------------------------------------
+
+10. Instale a **última versão do R** no (seu) computador usado para resolução desta lista. Crie um *script* chamado `solucao-q10-NomeDoAluno.R` contendo os códigos gerados para solução das questões 7 e 8. Faça as seguintes alterações no código do *script*:
+
+-   no código da questão 8, utilize a temperatura do ar ($T$) de 30°C e Umidade relativa ($UR$) de 30% para calcular $Tw$.
+
+-   no código da questão 9, considere $SI = 13$ (%), $CL = 37$ (%), $Db = 1.3$ ($g \, cm^{-3}$), $Me = 21$ (%) para recalcular $\theta_{10kPa}$, $\theta_{33kPa}$ e $\theta_{1500kPa}$.
+
+-   após os códigos usados para resolver as questões 8 e 9, adicione uma nova linha com a expressão `sessionInfo()`.
+
+-   Finalmente rode o *script* usando o R no modo não iterativo. Anexe o arquivo de saída `solucao-q10-NomeDoAluno.Rout` como resposta para este problema.
+
+------------------------------------------------------------------------
+
+Puxando os resultados do script de resposta.
+
+```{r, collapse = TRUE}
+source("solucao_10_Manoel.R")
+
+#resultado da questão 7 com os valores alterados
+
+wet_bulb_temperature
+
+#resultado da questão 8 com os valores alterados
+
+theta_10kpa
+theta_33kpa
+theta_1500kpa
+
+#resultado da questão 9 com os valores alterados
+
+round(x = theta_10kpa, digits = 2)
+round(x = theta_33kpa, digits = 2)
+round(x = theta_1500kpa, digits = 2)
+
+```
